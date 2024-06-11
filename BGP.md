@@ -35,7 +35,7 @@ or
 
 In the simplified model, the most obvious choice for the route for the packet to be sent over is the first as it requires the least hops for the packet to reach AS3 from AS1.
 
-### On the scale of the Internet
+## On the scale of the Internet
 
 The Internet is much, much larger than the one in the diagram and this could mean that there are many more hops that a packet would need to go over to reach it's destination.
 It also constantly changes as systems that were previously active, shutdown and cease to respond to requests, while new systems may be introduced. 
@@ -49,8 +49,6 @@ The companies and organisations that run ASes may compete with one another, resu
 A factor that effects this is the costs that some ASes charge other ASes for routing.
 BGP routes will try to be efficient but will take into account any business considerations.
 
----
-
 ### Who operates ASes?
 
 Typically, ASes belong to ISPs or other large organisations such as tech companies, unviersities, governments and scientific instituions.
@@ -58,3 +56,15 @@ Typically, ASes belong to ISPs or other large organisations such as tech compani
 ASes must have a registered autonomous system number (ASN) which the Internet Assigned Numbers Authority assigns to Regional Internet Registries, which then assigns them to ISPs and networks.
 
 ASNs are 16 bit numbers between 1 and 65534 or 32 bit nubmers between 131072 and 4294967294.
+ASNs are only required for use in external BGP.
+
+## External BGP and Internal BGP
+
+External BGP is necessary for routing packets between ASes and so is consider external as it is between networks external to the AS.
+Internal BGP isn't necessary for a network to be able to use external BGP as ASes can choose their own protocol for controlling the flow of packets within their network.
+
+External BGP can be considered as international shipping as all countries have a standard way of shipping between each other. However, within the country, the country can choose their own method of routing (internal BGP is an example).
+
+## BGP Attributes
+
+The main goal of BGP is to find the most efficient route for a packet.
