@@ -22,3 +22,39 @@ If the BGP is considered to be a postal service, autonomous systems are like pos
 ### Routing Choices
 
 ![](https://www.cloudflare.com/img/learning/security/glossary/what-is-bgp/bgp-simplified.svg)
+
+In the simplied diagram, a packet is destined for AS3 and is sent from AS1. The protocol has the option of either:
+
+> Hopping to AS2 then hopping to AS3
+
+or
+
+> Hopping to AS6, then to AS5, then to AS4 and finally to AS3
+
+### Which route? Why?
+
+In the simplified model, the most obvious choice for the route for the packet to be sent over is the first as it requires the least hops for the packet to reach AS3 from AS1.
+
+### On the scale of the Internet
+
+The Internet is much, much larger than the one in the diagram and this could mean that there are many more hops that a packet would need to go over to reach it's destination.
+It also constantly changes as systems that were previously active, shutdown and cease to respond to requests, while new systems may be introduced. 
+
+Autonomous systems need to be kept up to date on which routes are available and which routes are no longer an option.
+This is achieved by ASes connecting to neighboring ASes over a TCP/IP connection to share routing information, allowing each AS to properly route outbound data.
+
+### Routes aren't always the most efficient
+
+The companies and organisations that run ASes may compete with one another, resulting in ASes choosing not to route over the most efficient path, and rather the one that is favoured by a company or organisation. 
+A factor that effects this is the costs that some ASes charge other ASes for routing.
+BGP routes will try to be efficient but will take into account any business considerations.
+
+---
+
+### Who operates ASes?
+
+Typically, ASes belong to ISPs or other large organisations such as tech companies, unviersities, governments and scientific instituions.
+
+ASes must have a registered autonomous system number (ASN) which the Internet Assigned Numbers Authority assigns to Regional Internet Registries, which then assigns them to ISPs and networks.
+
+ASNs are 16 bit numbers between 1 and 65534 or 32 bit nubmers between 131072 and 4294967294.
